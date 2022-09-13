@@ -1,10 +1,10 @@
 body {
-    background-color: rgb(233, 233, 233);
+    background-color: rgb(20, 20, 20);
   }
   
   h1 {
     font-family: Arial;
-    background: -webkit-linear-gradient(rgb(212, 46, 17), rgb(103, 20, 211));
+    background: -webkit-linear-gradient(to bottom right, rgb(212, 46, 17), rgb(103, 20, 211));
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
     text-align: center;
