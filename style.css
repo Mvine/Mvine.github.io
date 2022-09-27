@@ -11,6 +11,15 @@ body {
     font-size: 72px;
   }
   
+  h2 {
+    font-family: Arial;
+    background: -webkit-linear-gradient(bottom right, rgb(253, 158, 248), rgb(36, 10, 133));
+   -webkit-background-clip: text;
+   color: rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-size: 48px;
+  }
+  
   p {   
     font-family: Arial;
     font-size: 20px;
