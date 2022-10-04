@@ -19,6 +19,14 @@ body {
     text-align: center;
     font-size: 48px;
   }
+
+  h6 {
+    font-family: Arial;
+   color: rgb(255, 255, 255);
+    font-size: 11px;
+  }
+
+
   
   p {   
     font-family: Arial;
@@ -43,4 +51,18 @@ body {
   to {
     opacity: 1;
   }
+}
+
+/* Style the header */
+.header {
+  padding: 1px 7px;
+  background: rgb(34, 34, 34);
+  color: #f1f1f1;
+}
+
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+  position: sticky;
+  top: 0;
+  width: 99%
 }
