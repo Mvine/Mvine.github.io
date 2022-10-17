@@ -24,7 +24,7 @@ function scrollFade() {
     var scrollTop = $(this).scrollTop();
     
     $('.fadeOnScroll').css({
-        opacity: function() {
+        opacity: function(buffer = 0.0) {
             var elementHeight = $(this).height(),
             opacity = (((elementHeight - scrollTop) / elementHeight));
             
@@ -34,5 +34,12 @@ function scrollFade() {
     
     pageHeaderText.innerHTML = "Current Scroll Value From Top: " + (scrollTop);
 
+}
+
+function makeSticky(){
+
+    var scrollTop = $(this).scrollTop();
+
+    
 }
 
