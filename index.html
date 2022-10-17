@@ -3,20 +3,29 @@
     <head>
         <link rel="stylesheet" href="style.css">
         <script type="text/javascript" src="js/website.js"></script>
+        <script src="jQuery/jquery-3.6.1.min.js"></script>
     </head>
 
     <body>
 
-        <div class="header sticky" id="myHeader">
-            <h6 id ="halpMe">This is where something goes</h6>
+        <div class="header sticky fadeOnScroll" id="myHeader">
+            <h6 id ="headerText">This is where something goes</h6>
         </div>
 
-        <div class="body" id ="pageContent">
-            <h1>Marcus's Website</h1>
-            <img src = "images/RedBull.png" class = "center fade"> </img>
-            <h2> Life could be a dream </h2>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/phyZEztKckQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class = "center fade"></iframe>
+        <div class="body" id ="heroIntro">
+            <h1 class="fadeOnScroll">Bread</h1>
+            <video width= "100%" height = "auto" autoplay muted class = "fadeOnScroll"> 
+            <source src = "images/breadIntro.mp4" type = "video/mp4">
+            </video>
         </div>
+
+        <div>
+            <h2> Life could be a dream </h2>
+            <iframe margin-bottom = "3000px" width = "auto" height = "auto" src="https://www.youtube.com/embed/phyZEztKckQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class = "center fade"></iframe>
+            <h1>hi</h1>
+        </div>
+
+
 
     </body>
 

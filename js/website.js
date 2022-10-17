@@ -1,24 +1,38 @@
 // When the user scrolls the page, execute myFunction
 window.onscroll = function() {scrollFade()};
 
-// Get the header
-var header = document.getElementById("myHeader");
-
-console.log(header);
+window.onload = function() {startUp()};
 
 // Get the offset position of the navbar
 //var sticky = header.offsetTop;
 
-// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+var pageHeader = null;
+
+var pageHeaderText = null;
+
+function startUp() {
+
+    pageHeader = document.querySelector('#myHeader');
+    pageHeaderText = pageHeader.querySelector('#headerText');
+
+    console.log(pageHeader);
+    console.log(pageHeaderText);
+}   
 
 function scrollFade() {
-
-    var pageHeader = header.getElementById("halpMe");
-
-    var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
-    console.log(scrollTop);
-    console.log(pageHeader);
-    pageHeader.innerHTML = "hi";
+    
+    var scrollTop = $(this).scrollTop();
+    
+    $('.fadeOnScroll').css({
+        opacity: function() {
+            var elementHeight = $(this).height(),
+            opacity = (((elementHeight - scrollTop) / elementHeight));
+            
+            return opacity;
+        }
+    });
+    
+    pageHeaderText.innerHTML = "Current Scroll Value From Top: " + (scrollTop);
 
 }
 
