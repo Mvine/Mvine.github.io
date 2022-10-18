@@ -8,8 +8,8 @@ var pageHeaderText = null;
 
 function startUp() {
 
-    pageHeader = document.querySelector('#myHeader');
-    pageHeaderText = pageHeader.querySelector('#headerText');
+    //pageHeader = document.querySelector('#myHeader');
+    //pageHeaderText = pageHeader.querySelector('#headerText');
 
     //console.log(pageHeader);
     //console.log(pageHeaderText);
@@ -28,19 +28,24 @@ function scrollUpdate() {
         }
     });
     
-    pageHeaderText.innerHTML = "Current Scroll Value From Top: " + (scrollTop);
+    //pageHeaderText.innerHTML = "Current Scroll Value From Top: " + (scrollTop);
 
     var $el = $('.fixedElement'); 
 
     var isPositionFixed = ($el.css('position') == 'fixed');
+    var isVisible = !($el.css('display') == 'contents');
+
     if (scrollTop > 800 && !isPositionFixed){ 
       $el.css({'display': 'block', 'position': 'fixed', 'top': '50%', 'left': '50%', 'transform': 'translate(-50%, -50%)'}); 
     }
     if (scrollTop < 800 && isPositionFixed){
       $el.css({'display': 'block','position': 'static', 'align': 'center', 'transform': 'translate(0%, 0%)'}); 
     } 
-    else if (scrollTop> 3200 && isPositionFixed){
+    else if (scrollTop > 3200 && isPositionFixed){
       $el.css({'display': 'contents' });
+    }
+    else if (scrollTop < 3200 && isPositionFixed && !isVisible){
+        $el.css({'display': 'block', 'position': 'fixed', 'top': '50%', 'left': '50%', 'transform': 'translate(-50%, -50%)'}); 
     }
 
     var $el = $('.heroText'); 

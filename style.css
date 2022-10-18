@@ -4,19 +4,35 @@ body {
     background-color: rgb(0, 0, 0);
   }
 
+  .standardText {
+    font-family: Montserrat;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    text-align: center;
+  }
+
+  a {
+    font-family: Montserrat;
+    background: -webkit-linear-gradient(bottom right, rgb(255, 30, 244), rgb(34, 13, 112));
+    -webkit-background-clip: text;
+    color: rgba(0, 0, 0, 0.2);
+    font-size: 20px;
+  }
+
   h1 {
-    font-family: Arial;
-    background: -webkit-linear-gradient(bottom right, rgb(255, 95, 247), rgb(74, 50, 160));
+    font-family: Montserrat;
+    background: -webkit-linear-gradient(bottom right, rgb(255, 30, 244), rgb(34, 13, 112));
     -webkit-background-clip: text;
     color: rgba(0, 0, 0, 0.2);
     text-align: left;
     font-size: 128px;
     padding-left: 10%;
+    margin-block-end: 0;
   }
   
   h2 {
-    font-family: Arial;
-    background: -webkit-linear-gradient(bottom right, rgb(253, 158, 248), rgb(36, 10, 133));
+    font-family: Montserrat;
+    background: -webkit-linear-gradient(bottom right, rgb(233, 28, 223), rgb(30, 7, 112));
     -webkit-background-clip: text;
     color: rgba(0, 0, 0, 0.2);
     text-align: center;
@@ -24,7 +40,7 @@ body {
   }
 
   h6 {
-    font-family: Arial;
+    font-family: Montserrat;
     color: rgb(255, 255, 255);
     font-size: 11px;
     opacity: 1.0;
@@ -32,7 +48,7 @@ body {
 
   
   p {   
-    font-family: Arial;
+    font-family: Montserrat;
     font-size: 20px;
     color: white;
   }
@@ -41,7 +57,23 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    /* width: 50%; */
+  }
+
+  .containerLeft{
+    display: block;
+    margin-left: 5vh;
+    margin-right: 50%;
+    min-width: 50%;
+    max-width: 50%;
+  }
+
+  .containerRight{
+    display: block;
+    margin-left: 50%;
+    margin-right: 5vh;
+    min-width: 50%;
+    max-width: 50%;
   }
 
   .fadeIn{ 
@@ -51,6 +83,21 @@ body {
 .fadeOut{ 
   animation: fadeOut 1s;
 }
+
+/* Table CSS */
+.tg  {border:none;border-radius:20px;border-collapse:collapse;border-spacing:0;margin:2px auto;}
+.tg td{border-style:solid;border-width:2px;font-family:Montserrat, sans-serif;font-size:20px;overflow:hidden;
+  padding:10px 5px;word-break:normal;}
+.tg th{border-style:solid;border-width:2px;font-family:Montserrat, sans-serif;font-size:48px;font-weight:normal;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-8y8w{background-color:#000000;border-color:#ec35fc;color:#ffffff;font-family:Montserrat, Helvetica, sans-serif !important;
+  text-align:left;vertical-align:top}
+.tg .tg-uz9u{background-color:#000000;border-color:#ec35fc;color:#ffffff;font-family:Montserrat, Helvetica, sans-serif !important;
+  text-align:center;vertical-align:top}
+.tg .tg-qfy8{background-color:#000000;border-color:#ec35fc;color:#ffffff;font-family:Montserrat, Helvetica, sans-serif !important;
+  font-size:48px;font-weight:bold;text-align:center;top:-1px;vertical-align:top;
+  will-change:transform}
+@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}
 
 @keyframes fadeIn {
   from {
@@ -80,10 +127,7 @@ body {
 }
 
 .heroText {
-  font-family: Arial;
-  /*TODO make this an image that scrolls and shit*/
-  /*background: -webkit-linear-gradient(bottom right, rgb(253, 158, 248), rgb(36, 10, 133));*/
-  /*background-image: url(images/heroBG.png);*/
+  font-family: Montserrat;
   background-color: #000000; /* Used if the image is unavailable */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
@@ -98,20 +142,31 @@ body {
 }
 
 .heroTitle {
-  font-family: Arial;
-  /*TODO make this an image that scrolls and shit*/
-  /*background: -webkit-linear-gradient(bottom right, rgb(253, 158, 248), rgb(36, 10, 133));*/
+  font-family: Montserrat;
+  background-color: #000000; /* Used if the image is unavailable */
+  background-position: center; /* Center the image */
+  background-repeat: repeat; /* Do not repeat the image */
+  width: 50%;
   -webkit-background-clip: text;
   color: rgba(0, 0, 0, 0.2);
-  text-align: center;
   font-size: 128px;
-  padding: 50%, 50%;
+  text-align: center;
+  font-weight: bold;
+  position: static;
+  top: 0;
 }
 
 
-/*trigger for debugging*/
+/*trigger for debugging && fake scroll*/
 .trigger {
   height:320vh;
+  width:10px;
+  display:block;
+  margin:0;
+}
+
+.triggerSmall {
+  height:80vh;
   width:10px;
   display:block;
   margin:0;
