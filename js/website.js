@@ -10,7 +10,7 @@ function startUp() {
 
 }   
 
-function scrollUpdate() {
+function scrollUpdate() { 
     
     var scrollTop = $(this).scrollTop();
     
