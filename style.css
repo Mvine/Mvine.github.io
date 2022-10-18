@@ -11,7 +11,7 @@ body {
     color: rgba(0, 0, 0, 0.2);
     text-align: left;
     font-size: 128px;
-    padding-left: 20%;
+    padding-left: 10%;
   }
   
   h2 {
@@ -34,6 +34,7 @@ body {
   p {   
     font-family: Arial;
     font-size: 20px;
+    color: white;
   }
 
   .center {
@@ -43,8 +44,12 @@ body {
     width: 50%;
   }
 
-  .fade{ 
+  .fadeIn{ 
     animation: fadeIn 1s;
+}
+
+.fadeOut{ 
+  animation: fadeOut 1s;
 }
 
 @keyframes fadeIn {
@@ -56,23 +61,40 @@ body {
   }
 }
 
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 /* Style the header */
 .header {
   padding: 1px 7px;
   background: rgb(34, 34, 34);
   color: #f1f1f1;
   opacity: 1.0;
+  z-index: 100;
 }
 
 .heroText {
   font-family: Arial;
   /*TODO make this an image that scrolls and shit*/
   /*background: -webkit-linear-gradient(bottom right, rgb(253, 158, 248), rgb(36, 10, 133));*/
+  /*background-image: url(images/heroBG.png);*/
+  background-color: #000000; /* Used if the image is unavailable */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  width: 50%;
   -webkit-background-clip: text;
   color: rgba(0, 0, 0, 0.2);
+  font-size: 48px;
   text-align: center;
-  font-size: 72px;
-  padding: 50%, 50%;
+  font-weight: bold;
+  position: static;
+  top: 0;
 }
 
 .heroTitle {
@@ -84,6 +106,20 @@ body {
   text-align: center;
   font-size: 128px;
   padding: 50%, 50%;
+}
+
+
+/*trigger for debugging*/
+.trigger {
+  height:320vh;
+  width:10px;
+  display:block;
+  margin:0;
+}
+
+#trigger1 {
+  background:rgb(0, 0, 0);
+  margin-top:0;
 }
 
 .fadeOnScroll {

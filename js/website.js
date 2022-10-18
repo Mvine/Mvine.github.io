@@ -1,13 +1,9 @@
 // When the user scrolls the page, execute myFunction
-window.onscroll = function() {scrollFade()};
+window.onscroll = function() {scrollUpdate()};
 
 window.onload = function() {startUp()};
 
-// Get the offset position of the navbar
-//var sticky = header.offsetTop;
-
 var pageHeader = null;
-
 var pageHeaderText = null;
 
 function startUp() {
@@ -15,11 +11,11 @@ function startUp() {
     pageHeader = document.querySelector('#myHeader');
     pageHeaderText = pageHeader.querySelector('#headerText');
 
-    console.log(pageHeader);
-    console.log(pageHeaderText);
+    //console.log(pageHeader);
+    //console.log(pageHeaderText);
 }   
 
-function scrollFade() {
+function scrollUpdate() {
     
     var scrollTop = $(this).scrollTop();
     
@@ -34,12 +30,25 @@ function scrollFade() {
     
     pageHeaderText.innerHTML = "Current Scroll Value From Top: " + (scrollTop);
 
+    var $el = $('.fixedElement'); 
+
+    var isPositionFixed = ($el.css('position') == 'fixed');
+    if (scrollTop > 800 && !isPositionFixed){ 
+      $el.css({'display': 'block', 'position': 'fixed', 'top': '50%', 'left': '50%', 'transform': 'translate(-50%, -50%)'}); 
+    }
+    if (scrollTop < 800 && isPositionFixed){
+      $el.css({'display': 'block','position': 'static', 'align': 'center', 'transform': 'translate(0%, 0%)'}); 
+    } 
+    else if (scrollTop> 3200 && isPositionFixed){
+      $el.css({'display': 'contents' });
+    }
+
+    var $el = $('.heroText'); 
+
+    var scrollMod = scrollTop / 1000;
+    var elementHeight = $(this).height();
+
+    if ($(this).scrollTop() > 700){
+        $el.css({'background-image': 'url(images/heroBG.png)', 'background-position-y': (scrollMod - scrollTop) + 700});
+    }
 }
-
-function makeSticky(){
-
-    var scrollTop = $(this).scrollTop();
-
-    
-}
-
