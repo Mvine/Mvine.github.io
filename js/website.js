@@ -8,11 +8,6 @@ var pageHeaderText = null;
 
 function startUp() {
 
-    //pageHeader = document.querySelector('#myHeader');
-    //pageHeaderText = pageHeader.querySelector('#headerText');
-
-    //console.log(pageHeader);
-    //console.log(pageHeaderText);
 }   
 
 function scrollUpdate() {
@@ -28,7 +23,6 @@ function scrollUpdate() {
         }
     });
     
-    //pageHeaderText.innerHTML = "Current Scroll Value From Top: " + (scrollTop);
 
     var $el = $('.fixedElement'); 
 
