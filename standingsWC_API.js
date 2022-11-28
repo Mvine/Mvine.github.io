@@ -1,4 +1,4 @@
-//Javascript for schedule
+//Javascript for standings
 
 // Copyright <2022> <wsminelli on Github>
 //https://github.com/wsminelli/rocketseat-nlw-copa-2022/blob/main/js/calendario.js
@@ -22,6 +22,8 @@
 //As of November 28th 2:51 AM EST
 
 
+//TODO: write this function to create the groups in order based on points instead of a list of games based on time
+//need to use the groups endpoint I believe
 
 function getDayOfGame(date) {
     const rawDate = new Date(date)
@@ -56,7 +58,7 @@ function getHourDate(date) {
     return `${rawDate.getHours().toString().padStart(2, "0")}:00`
 }
 
-function createGame(player1, stadium, hour, player2, stage, status) {
+function createGroup(player1, stadium, hour, player2, stage, status) {
     if (status == "scheduled") {
         return `
         <li class = "${stage.toLowerCase()}">
@@ -73,40 +75,8 @@ function createGame(player1, stadium, hour, player2, stage, status) {
         </li>
         `
     }
-    else if (status == "in_progress") {
-        return `
-        <li class = "${stage.toLowerCase()}">
-            <h4 style="color:black">${player1.goals.toString()}</h4>
-            <figure>    
-                <img src="images/icon-${player1.name?.toLowerCase()}.png" alt="icon for ${player1.name?.toLowerCase()}">
-            </figure>
-            <div class="info">
-                <h4 style = "color: hsl(342, 74%, 31%)">LIVE<br></h4>
-            </div>
-            <figure> 
-                <img src="images/icon-${player2.name?.toLowerCase()}.png" alt="icon for ${player2.name?.toLowerCase()}">
-            </figure>
-            <h4 style="color:black">${player2.goals.toString()}</h4>
-        </li>
-        `
-    }
-
     else {
-        return `
-        <li class = "${stage.toLowerCase()}">
-            <h4 style="color:black">${player1.goals.toString()}</h4>
-            <figure>    
-                <img src="images/icon-${player1.name?.toLowerCase()}.png" alt="icon for ${player1.name?.toLowerCase()}">
-            </figure>
-            <div class="info">
-                <span>${stadium}<br></span>
-            </div>
-            <figure> 
-                <img src="images/icon-${player2.name?.toLowerCase()}.png" alt="icon for ${player2.name?.toLowerCase()}">
-            </figure>
-            <h4 style="color:black">${player2.goals.toString()}</h4>
-        </li>
-        `
+       ""
     }
 
 }

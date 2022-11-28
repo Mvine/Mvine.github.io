@@ -341,6 +341,21 @@ h4 {
     align-items: flex-start;
 }
 
+.standings-layout_flex{
+    width: 80%;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+
+
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
 
 
 /* Stuff for the cards */
@@ -379,7 +394,6 @@ As of November 28th 2:51 AM EST
     justify-content: center;
     gap: 16px;
     padding: 8px 16px;
-    border: 1px solid var(--card-border-title-color);
     border-radius: 6px;
     width: fit-content;
     margin-inline: auto;
@@ -454,5 +468,99 @@ As of November 28th 2:51 AM EST
 .card h2,
 .card ul li .info, 
 .card ul li figure {
+    transition: transform 0.3s ;
+}
+
+
+
+/* for groups */
+
+.group {
+    padding: 32px 23px;
+    text-align: center;
+    background: #eeeee4;
+    border-radius: 10px;
+}
+
+.group h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    width: fit-content;
+    margin-inline: auto;
+    margin-bottom: 40px;
+    color: black;
+}
+
+.group h2 span {
+    color: var(--secondary-color);
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.group ul {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-width: 300px;
+    min-height: 430px;
+}
+
+.group ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.group ul li figure {
+    flex: 1;
+}
+
+.group ul li figure img {
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.group ul li figure figcaption {
+    color: #333;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.group ul li + li {
+    padding-top: 24px;
+    border-top: 1px solid #c1c1c1;
+}
+
+.group ul li .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 8px;
+    flex: 0;
+}
+
+.group ul li .info strong {
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 125%;
+    color:black;
+}
+
+.group ul li .info span {
+    font-size: 10px;
+    line-height: 12px;
+    color: #787878;
+}
+
+.group h2,
+.group ul li .info, 
+.group ul li figure {
     transition: transform 0.3s ;
 }
