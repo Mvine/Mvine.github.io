@@ -61,7 +61,7 @@ function getHourDate(date) {
 }
 
 function createGame(player1, stadium, hour, player2, stage, status) {
-    if (status != "completed") {
+    if (status == "scheduled") {
         return `
         <li class = "${stage.toLowerCase()}">
             <figure>    
@@ -77,7 +77,7 @@ function createGame(player1, stadium, hour, player2, stage, status) {
         </li>
         `
     }
-    else if (status == "in progress") {
+    else if (status == "in_progress") {
         return `
         <li class = "${stage.toLowerCase()}">
             <h4 style="color:black">${player1.goals.toString()}</h4>
@@ -85,7 +85,7 @@ function createGame(player1, stadium, hour, player2, stage, status) {
                 <img src="images/icon-${player1.name?.toLowerCase()}.png" alt="icon for ${player1.name?.toLowerCase()}">
             </figure>
             <div class="info">
-                <h4>LIVE<br></h4>
+                <h4 style = "color: hsl(342, 74%, 31%)">LIVE<br></h4>
             </div>
             <figure> 
                 <img src="images/icon-${player2.name?.toLowerCase()}.png" alt="icon for ${player2.name?.toLowerCase()}">
@@ -152,7 +152,7 @@ fetch('https://copa22.medeiro.tech/matches')
             const weekDay = getWeekDayOfGame(date)
             const gamesOfDay = games.map((game) => {
                 const hour = getHourDate(game.date)
-                return createGame(game.homeTeam, game.venue, hour, game.awayTeam, game.stageName, game.status)
+                return createGame(game.homeTeam, game.venue, hour, game.awayTeam, game.stageName, game.status, game.time)
 
             })
             const card = createCard(date, weekDay, gamesOfDay.join(''))
