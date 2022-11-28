@@ -1,26 +1,5 @@
 //Javascript for standings
 
-// Copyright <2022> <wsminelli on Github>
-//https://github.com/wsminelli/rocketseat-nlw-copa-2022/blob/main/js/calendario.js
-
-// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and 
-//associated documentation files (the "Software"), to deal in the Software without restriction, including without
-// limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
-// and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-// The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
-// INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-// IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-// TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-//Under MIT licensing I've grabbed parsing functions from this data interpreter. I'm using them to parse data from am open source world cup API
-//so that the website can update scheduling and scores dynamically. Changes include adding checks and parsing for scores if games have already been
-//played, or are currently being played.
-
-//As of November 28th 2:51 AM EST
-
 
 //TODO: write this function to create the groups in order based on points instead of a list of games based on time
 //need to use the groups endpoint I believe
@@ -58,20 +37,16 @@ function getHourDate(date) {
     return `${rawDate.getHours().toString().padStart(2, "0")}:00`
 }
 
-function createGroup(player1, stadium, hour, player2, stage, status) {
-    if (status == "scheduled") {
+function createTeam(team) {
+    if (team) {
         return `
-        <li class = "${stage.toLowerCase()}">
+        <li>
+            <h4 style="color:black">${team.position}</h4>
             <figure>    
-                <img src="images/icon-${player1.name?.toLowerCase()}.png" alt="icon for ${player1.name?.toLowerCase()}">
+                <img src="images/icon-${team.alternateName?.toLowerCase()}.png" alt="icon for ${team.alternateName?.toLowerCase()}">
             </figure>
-            <div class="info">
-                <span>${stadium}<br></span>
-                <strong>${hour}</strong>
-            </div>
-            <figure> 
-                <img src="images/icon-${player2.name?.toLowerCase()}.png" alt="icon for ${player2.name?.toLowerCase()}">
-            </figure>
+
+            <h4 style="color:black"> Points: ${team.points}</h4>
         </li>
         `
     }
@@ -81,16 +56,18 @@ function createGroup(player1, stadium, hour, player2, stage, status) {
 
 }
 
-function createCard(date, day, games) {
+function createCard(group, teams) {
 
-    if (games == "") {
+    if (teams == "") {
         ""
-    } else {
+    } 
+    
+    else {
         return `
         <div class="card">
-            <h2>${date}<span>${day}</span></h2>
+            <h2>${group}</h2>
             <ul>
-                ${games}
+                ${teams}
             </ul>
         </div>
     `
@@ -99,39 +76,79 @@ function createCard(date, day, games) {
 
 }
 
-fetch('https://copa22.medeiro.tech/matches')
+// fetch('https://copa22.medeiro.tech/matches')
+//     .then(res => res.json())
+//     .then(data => {
+//         const gamesGroupedByDate = {}
+//         data.forEach(game => {
+//             const dayOfGame = getDayOfGame(game.date)
+
+//             if (!gamesGroupedByDate[dayOfGame]) {
+//                 gamesGroupedByDate[dayOfGame] = []
+//             }
+
+//             gamesGroupedByDate[dayOfGame].push(game)
+//         });
+
+//         const cards = []
+//         Object.entries(gamesGroupedByDate).forEach(([date, games]) => {
+//             const weekDay = getWeekDayOfGame(date)
+//             const gamesOfDay = games.map((game) => {
+//                 const hour = getHourDate(game.date)
+//                 return createGame(game.homeTeam, game.venue, hour, game.awayTeam, game.stageName, game.status, game.time)
+
+//             })
+//             const card = createCard(date, weekDay, gamesOfDay.join(''))
+//             cards.push(card)
+//         })
+//         document.querySelector(".standings-layout_flex").innerHTML =
+//             cards.join('')
+
+//         Object.entries(gamesGroupedByDate).forEach(([date, games]) => {
+//             const weekDay = getWeekDayOfGame(date)
+//             const gamesOfDay = games.map((game) => {
+//                 const hour = getHourDate(game.date)
+//                 return 0;
+//             })
+//         })
+//     });
+
+    fetch('https://copa22.medeiro.tech/groups')
     .then(res => res.json())
     .then(data => {
-        const gamesGroupedByDate = {}
-        data.forEach(game => {
-            const dayOfGame = getDayOfGame(game.date)
+        const teamsGroupedByCode = {}
+        data.forEach(group => {
+            const groupTeams = group.teams;
+            const groupCode = group.code;
 
-            if (!gamesGroupedByDate[dayOfGame]) {
-                gamesGroupedByDate[dayOfGame] = []
-            }
+            groupTeams.forEach(teamsInGroup => {
+             if (!teamsGroupedByCode[groupCode]) {
+                 teamsGroupedByCode[groupCode] = []
+             }
 
-            gamesGroupedByDate[dayOfGame].push(game)
+             teamsGroupedByCode[groupCode].push(teamsInGroup);
+            });
         });
 
-        const cards = []
-        Object.entries(gamesGroupedByDate).forEach(([date, games]) => {
-            const weekDay = getWeekDayOfGame(date)
-            const gamesOfDay = games.map((game) => {
-                const hour = getHourDate(game.date)
-                return createGame(game.homeTeam, game.venue, hour, game.awayTeam, game.stageName, game.status, game.time)
+        console.log(teamsGroupedByCode);
 
-            })
-            const card = createCard(date, weekDay, gamesOfDay.join(''))
-            cards.push(card)
-        })
-        document.querySelector(".schedule-layout_flex").innerHTML =
-            cards.join('')
+          const cards = []
+          console.log(Object.entries(teamsGroupedByCode));
+          Object.entries(teamsGroupedByCode).forEach(([group, teams]) => {
+               const teamsInGroup = teams.map((team) => {
+                   return createTeam(team);
+               })
+              const card = createCard(group, teamsInGroup.join(''))
+              cards.push(card)
+          })
+         document.querySelector(".standings-layout_flex").innerHTML =
+             cards.join('')
 
-        Object.entries(gamesGroupedByDate).forEach(([date, games]) => {
-            const weekDay = getWeekDayOfGame(date)
-            const gamesOfDay = games.map((game) => {
-                const hour = getHourDate(game.date)
-                return 0;
-            })
-        })
+        //  Object.entries(teamsGroupedByCode).forEach(([date, games]) => {
+        //      const weekDay = getWeekDayOfGame(date)
+        //      const gamesOfDay = games.map((game) => {
+        //          const hour = getHourDate(game.date)
+        //          return 0;
+        //      })
+        //  })
     });

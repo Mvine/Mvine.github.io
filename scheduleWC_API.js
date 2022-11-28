@@ -99,7 +99,7 @@ function createGame(player1, stadium, hour, player2, stage, status) {
                 <img src="images/icon-${player1.name?.toLowerCase()}.png" alt="icon for ${player1.name?.toLowerCase()}">
             </figure>
             <div class="info">
-                <span>${stadium}<br></span>
+                <h4 style = "color: black">FT<br></h4>
             </div>
             <figure> 
                 <img src="images/icon-${player2.name?.toLowerCase()}.png" alt="icon for ${player2.name?.toLowerCase()}">
@@ -144,6 +144,9 @@ fetch('https://copa22.medeiro.tech/matches')
         });
 
         const cards = []
+
+        console.log(Object.entries(gamesGroupedByDate));
+
         Object.entries(gamesGroupedByDate).forEach(([date, games]) => {
             const weekDay = getWeekDayOfGame(date)
             const gamesOfDay = games.map((game) => {
