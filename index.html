@@ -1,101 +1,70 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="style.css">
-        <script type="text/javascript" src="js/website.js"></script>
-        <script src="jQuery/jquery-3.6.1.min.js"></script>
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600&display=swap" rel="stylesheet">
-        
-    </head>
+<head>
+    <title>World Cup Information</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='wcup.css'>
+    <script async="true" src='main.js'></script>
+</head>
 
-    <body>
-        
+<body>
+    <!-- START MAIN DIV -->
+    <div class="main-container">
+        <!-- HEADER -->
+        <div id="header" class="header">
+            <div class="header-main_wrapper">
+                <a class="header-main_logo" href="index.html"><img class="logo" src="images/QatarLogo.png"
+                        alt="World Cup Qatar Logo"></a>
+                <ul class="header-main_menu">
+                    <a href="index.html">
+                        <li class="header-main_menu_item active">Home</li>
+                    </a>
+                    <a href="Standings.html">
+                        <li class="header-main_menu_item">Standings</li>
+                    </a>
+                    <a href="Schedule.html">
+                        <li class="header-main_menu_item">Schedule</li>
+                    </a>
+                    <a href="Teams.html">
+                        <li class="header-main_menu_item">Teams</li>
+                    </a>
+                </ul>
 
-        <div class="body" id ="Intro">
-            <h1 class="fadeOnScroll fadeIn" padding-bottom="10px">Bread</h1>
-            <video width= "100%" height = "auto" autoplay muted class = "fadeOnScroll"> 
-            <source src = "images/breadIntro.mp4" type = "video/mp4">
-            </video>
+                <a href="" download="/dist/FIFA_FanGuide_Digital_EN_20112022.pdf" class="fan-guide">Fan Guide</a>
+            </div>
         </div>
-
-        <div>
-            <p class="heroText center fixedElement" > This is a paragraph about bread, as you can see it takes up some space</p>
-            <figure class="trigger" id="trigger1" ></figure>
-        </div>
-
-
-        <div class="containerRight sticky" style="padding-top: 15vh;">
-            <div>
-                <h1 style= "text-align:right; margin-right: 10vw;"> Bread </h1>
-                <h2 style= "text-align:right; margin-right: 10vw;"> Reimagined </h2>
+        <!-- INTRO VIDEO -->
+        <div class="intro-video_wrapper">
+            <div class="intro-video">
+                <video src="images/EmblemVideo.mp4" type="video/mp4" autoplay muted loop></video>
+                <!-- Add autoplay back -->
             </div>
         </div>
 
-        <div>
-            <figure class="triggerSmall" id="trigger2"></figure>
-        </div>
-
-        <div class="containerLeft">
-
-
-            <img src="images/COBS_Bread.png" style="width: 30%; height:auto">
-
-            <div class="tg-wrap"><table class="tg">
-                <thead>
-                  <tr>
-                    <th class="tg-qfy8" colspan="5">Types of Bread&nbsp;&nbsp;</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="tg-8y8w">Rye</td>
-                    <td class="tg-8y8w">Sourdough</td>
-                    <td class="tg-8y8w">Baguette</td>
-                    <td class="tg-8y8w">Brioche</td>
-                    <td class="tg-8y8w">Foccacia</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-8y8w">Multigrain</td>
-                    <td class="tg-8y8w">Pita</td>
-                    <td class="tg-8y8w">Whole-Grain</td>
-                    <td class="tg-8y8w">Challah</td>
-                    <td class="tg-8y8w">Naan</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-8y8w">Soda Bread</td>
-                    <td class="tg-8y8w">Sprouted</td>
-                    <td class="tg-8y8w">Pumpernickel</td>
-                    <td class="tg-8y8w">Cornbread</td>
-                    <td class="tg-uz9u">Matzo</td>
-                  </tr>
-                </tbody>
-                </table></div>
-
-                <p style="text-align:center;"> Now that I have your attention</p>
+        <section class="layout-sidebar_wrapper">
+            <div class="layout-sidebar_bar"><a class="twitter-timeline" data-chrome="noscrollbar noheader"
+                    data-height="1000px" data-theme="light" 
+                    href="https://twitter.com/FIFAWorldCup?ref_src=twsrc%5Etfw">Tweets by FIFAWorldCup</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+            <div class="layout-sidebar_body">
 
 
-                <ul class="standardText" style="margin-left: 40%;text-align: left;">
-                    <li> This</li>
-                    <li> is</li>
-                    <li> an</li>
-                    <li> unordered</li>
-                    <li> list</li>
-                    <li> of</li>
-                    <li> random</li>
-                    <li> words</li>
-                    <li> enjoy</li>
-                </ul>
+
+                <h1>Keep up to date with all  things World Cup</h1>
+                <img src="images/MessiCele.png">
 
 
-                <a href="https://www.cobsbread.com/" style="padding-left: 40%;">This is a link</a>
 
-                
-        </div>>
+            </div>
+        </section>
 
+    </div> <!-- END MAIN DIV -->
 
-    </body>
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <h4 style="padding-left: 10rem;" >A Team 6 Website</h4>
+    </footer>
+</body>
 
 </html>
