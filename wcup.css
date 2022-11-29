@@ -147,7 +147,7 @@ h4 {
     grid-area: layout-sidebar_body;
     transform-origin: top;
     position: absolute;
-    transform:translateX(-300px) scale(0.44);
+    transform: translateX(-300px) scale(0.44);
     z-index: 0;
 }
 
@@ -325,7 +325,7 @@ h4 {
     cursor: pointer;
 }
 
-.schedule-layout_flex{
+.schedule-layout_flex {
     width: 80%;
     padding-top: 5rem;
     padding-bottom: 5rem;
@@ -336,12 +336,12 @@ h4 {
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
-  
+
     justify-content: space-evenly;
     align-items: flex-start;
 }
 
-.standings-layout_flex{
+.standings-layout_flex {
     width: 80%;
     padding-top: 5rem;
     padding-bottom: 5rem;
@@ -352,14 +352,45 @@ h4 {
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
-  
+
     justify-content: space-evenly;
     align-items: flex-start;
 }
 
+.overlay {
+    position: fixed;
+    display: none;
+    width: 1fr;
+    height: 1fr;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 5;
+    cursor: pointer;
+
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.overlay img {
+    width: auto;
+    max-height: 65%;
+}
+
+.prevent-select {
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
+}
 
 /* Stuff for the cards */
- /* Copyright <2022> <wsminelli>
+/* Copyright <2022> <wsminelli>
 https://github.com/wsminelli/rocketseat-nlw-copa-2022/blob/main/js/calendario.js
  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and 
 associated documentation files (the "Software"), to deal in the Software without restriction, including without
@@ -439,7 +470,7 @@ As of November 28th 2:51 AM EST
     text-transform: uppercase;
 }
 
-.card ul li + li {
+.card ul li+li {
     padding-top: 24px;
     border-top: 1px solid #c1c1c1;
 }
@@ -456,7 +487,7 @@ As of November 28th 2:51 AM EST
     font-weight: 900;
     font-size: 36px;
     line-height: 125%;
-    color:black;
+    color: black;
 }
 
 .card ul li .info span {
@@ -466,9 +497,9 @@ As of November 28th 2:51 AM EST
 }
 
 .card h2,
-.card ul li .info, 
+.card ul li .info,
 .card ul li figure {
-    transition: transform 0.3s ;
+    transition: transform 0.3s;
 }
 
 
@@ -533,7 +564,7 @@ As of November 28th 2:51 AM EST
     text-transform: uppercase;
 }
 
-.group ul li + li {
+.group ul li+li {
     padding-top: 24px;
     border-top: 1px solid #c1c1c1;
 }
@@ -550,7 +581,7 @@ As of November 28th 2:51 AM EST
     font-weight: 900;
     font-size: 36px;
     line-height: 125%;
-    color:black;
+    color: black;
 }
 
 .group ul li .info span {
@@ -560,7 +591,7 @@ As of November 28th 2:51 AM EST
 }
 
 .group h2,
-.group ul li .info, 
+.group ul li .info,
 .group ul li figure {
-    transition: transform 0.3s ;
+    transition: transform 0.3s;
 }

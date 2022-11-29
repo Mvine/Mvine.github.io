@@ -5,6 +5,7 @@
     <title>World Cup Information</title>
     <link rel='stylesheet' type='text/css' media='screen' href='wcup.css'>
     <script async="true" src='main.js'></script>
+    <script async="true" src='teams.js'></script>
 </head>
 
 <body>
@@ -30,55 +31,62 @@
                     </a>
                 </ul>
 
-                <a href="./uploads/FIFA_FanGuide_2022_EN.pdf" download="FIFA_FanGuide_2022_EN.pdf" class="fan-guide">Fan Guide</a>
+                <a href="./uploads/FIFA_FanGuide_2022_EN.pdf" download="FIFA_FanGuide_2022_EN.pdf" class="fan-guide">Fan
+                    Guide</a>
             </div>
         </div>
 
         <div class="header-box"></div>
-        
+
+
+        <div class="overlay"> </div>
 
         <!-- This was made before the inclusion of the API fetch, otherwise it would have been made via function-->
         <section class="team-layout_wrapper">
             <h4>Group A</h4>
-            <div id="Netherlands" > <img class="team-country_icon" src="images/icon-netherlands.png" alt="CanadaFlag"></div>
-            <div id="Ecuador" > <img class="team-country_icon" src="images/icon-ecuador.png" alt="CanadaFlag"></div>
-            <div id="Senegal" > <img class="team-country_icon" src="images/icon-senegal.png" alt="CanadaFlag"></div>
-            <div id="Qatar" > <img class="team-country_icon" src="images/icon-qatar.png" alt="CanadaFlag"></div>
+            <div id="netherlands"> <img class="team-country_icon" src="images/icon-netherlands.png" alt="CanadaFlag">
+            </div>
+            <div id="ecuador"> <img class="team-country_icon" src="images/icon-ecuador.png" alt="CanadaFlag"></div>
+            <div id="senegal"> <img class="team-country_icon" src="images/icon-senegal.png" alt="CanadaFlag"></div>
+            <div id="qatar"> <img class="team-country_icon" src="images/icon-qatar.png" alt="CanadaFlag"></div>
             <h4>Group B</h4>
-            <div id="England"> <img class="team-country_icon" src="images/icon-england.png" alt="EnglandFlag"></div>
-            <div id="Iran" > <img class="team-country_icon" src="images/icon-iran.png" alt="CanadaFlag"></div>
-            <div id="USA" > <img class="team-country_icon" src="images/icon-usa.png" alt="CanadaFlag"></div>
-            <div id="Wales" > <img class="team-country_icon" src="images/icon-wales.png" alt="CanadaFlag"></div>
+            <div id="england"> <img class="team-country_icon" src="images/icon-england.png" alt="EnglandFlag"></div>
+            <div id="iran"> <img class="team-country_icon" src="images/icon-iran.png" alt="CanadaFlag"></div>
+            <div id="usa"> <img class="team-country_icon" src="images/icon-usa.png" alt="CanadaFlag"></div>
+            <div id="wales"> <img class="team-country_icon" src="images/icon-wales.png" alt="CanadaFlag"></div>
             <h4>Group C</h4>
-            <div id="Poland" > <img class="team-country_icon" src="images/icon-poland.png" alt="CanadaFlag"></div>
-            <div id="Argentina" > <img class="team-country_icon" src="images/icon-argentina.png" alt="CanadaFlag"></div>
-            <div id="Saudi" > <img class="team-country_icon" src="images/icon-saudi arabia.png" alt="CanadaFlag"></div>
-            <div id="Mexico" > <img class="team-country_icon" src="images/icon-mexico.png" alt="CanadaFlag"></div>
+            <div id="poland"> <img class="team-country_icon" src="images/icon-poland.png" alt="CanadaFlag"></div>
+            <div id="argentina"> <img class="team-country_icon" src="images/icon-argentina.png" alt="CanadaFlag"></div>
+            <div id="saudi arabia"> <img class="team-country_icon" src="images/icon-saudi arabia.png" alt="CanadaFlag">
+            </div>
+            <div id="mexico"> <img class="team-country_icon" src="images/icon-mexico.png" alt="CanadaFlag"></div>
             <h4>Group D</h4>
-            <div id="France" > <img class="team-country_icon" src="images/icon-france.png" alt="CanadaFlag"></div>
-            <div id="Australia" > <img class="team-country_icon" src="images/icon-australia.png" alt="CanadaFlag"></div>
-            <div id="Denmark" > <img class="team-country_icon" src="images/icon-denmark.png" alt="CanadaFlag"></div>
-            <div id="Tunisia" > <img class="team-country_icon" src="images/icon-tunisia.png" alt="CanadaFlag"></div>
+            <div id="france"> <img class="team-country_icon" src="images/icon-france.png" alt="CanadaFlag"></div>
+            <div id="australia"> <img class="team-country_icon" src="images/icon-australia.png" alt="CanadaFlag"></div>
+            <div id="denmark"> <img class="team-country_icon" src="images/icon-denmark.png" alt="CanadaFlag"></div>
+            <div id="tunisia"> <img class="team-country_icon" src="images/icon-tunisia.png" alt="CanadaFlag"></div>
             <h4>Group E</h4>
-            <div id="Spain" > <img class="team-country_icon" src="images/icon-spain.png" alt="CanadaFlag"></div>
-            <div id="Japan" > <img class="team-country_icon" src="images/icon-japan.png" alt="CanadaFlag"></div>
-            <div id="CostaRica" > <img class="team-country_icon" src="images/icon-costa rica.png" alt="CanadaFlag"></div>
-            <div id="Germany" > <img class="team-country_icon" src="images/icon-germany.png" alt="CanadaFlag"></div>
+            <div id="spain"> <img class="team-country_icon" src="images/icon-spain.png" alt="CanadaFlag"></div>
+            <div id="japan"> <img class="team-country_icon" src="images/icon-japan.png" alt="CanadaFlag"></div>
+            <div id="costa rica"> <img class="team-country_icon" src="images/icon-costa rica.png" alt="CanadaFlag">
+            </div>
+            <div id="germany"> <img class="team-country_icon" src="images/icon-germany.png" alt="CanadaFlag"></div>
             <h4>Group F</h4>
-            <div id="Croatia" > <img class="team-country_icon" src="images/icon-croatia.png" alt="CanadaFlag"></div>
-            <div id="Morocco" > <img class="team-country_icon" src="images/icon-morocco.png" alt="CanadaFlag"></div>
-            <div id="Belgium" > <img class="team-country_icon" src="images/icon-belgium.png" alt="CanadaFlag"></div>
-            <div id="Canada" > <img class="team-country_icon" src="images/icon-canada.png" alt="CanadaFlag"></div>
+            <div id="croatia"> <img class="team-country_icon" src="images/icon-croatia.png" alt="CanadaFlag"></div>
+            <div id="morocco"> <img class="team-country_icon" src="images/icon-morocco.png" alt="CanadaFlag"></div>
+            <div id="belgium"> <img class="team-country_icon" src="images/icon-belgium.png" alt="CanadaFlag"></div>
+            <div id="canada"> <img class="team-country_icon" src="images/icon-canada.png" alt="CanadaFlag"></div>
             <h4>Group G</h4>
-            <div id="Brazil" > <img class="team-country_icon" src="images/icon-brazil.png" alt="CanadaFlag"></div>
-            <div id="Switzerland" > <img class="team-country_icon" src="images/icon-switzerland.png" alt="CanadaFlag"></div>
-            <div id="Cameroon" > <img class="team-country_icon" src="images/icon-cameroon.png" alt="CanadaFlag"></div>
-            <div id="Serbia" > <img class="team-country_icon" src="images/icon-serbia.png" alt="CanadaFlag"></div>
+            <div id="brazil"> <img class="team-country_icon" src="images/icon-brazil.png" alt="CanadaFlag"></div>
+            <div id="switzerland"> <img class="team-country_icon" src="images/icon-switzerland.png" alt="CanadaFlag">
+            </div>
+            <div id="cameroon"> <img class="team-country_icon" src="images/icon-cameroon.png" alt="CanadaFlag"></div>
+            <div id="serbia"> <img class="team-country_icon" src="images/icon-serbia.png" alt="CanadaFlag"></div>
             <h4>Group H</h4>
-            <div id="Portugal" > <img class="team-country_icon" src="images/icon-portugal.png" alt="CanadaFlag"></div>
-            <div id="Korea" > <img class="team-country_icon" src="images/icon-korea republic.png" alt="CanadaFlag"></div>
-            <div id="Uruguay" > <img class="team-country_icon" src="images/icon-uruguay.png" alt="CanadaFlag"></div>
-            <div id="Ghana" > <img class="team-country_icon" src="images/icon-ghana.png" alt="CanadaFlag"></div>
+            <div id="portugal"> <img class="team-country_icon" src="images/icon-portugal.png" alt="CanadaFlag"></div>
+            <div id="korea republic"> <img class="team-country_icon" src="images/icon-korea republic.png" alt="CanadaFlag"></div>
+            <div id="uruguay"> <img class="team-country_icon" src="images/icon-uruguay.png" alt="CanadaFlag"></div>
+            <div id="ghana"> <img class="team-country_icon" src="images/icon-ghana.png" alt="CanadaFlag"></div>
         </section>
 
     </div> <!-- END MAIN DIV -->
